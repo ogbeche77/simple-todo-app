@@ -1,7 +1,7 @@
 import React, { useRef } from "react"; //UseRef to obtain what user entered when form is submitted
 
 interface newTodoProps {
-  onAddTodo: (todoText: string) => void;
+  onAddTodo: (todoText: string) => void; //OnAddTodo is a function with named prop that is triggered in APP.jsx
 }
 
 //Get everything user entered and forward them to the APP.jsx

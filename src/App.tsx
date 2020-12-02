@@ -15,6 +15,7 @@ const App: React.FC = () => {
     ]);
   };
 
+  //Delete functionality added
   const todoDeleteHandler = (todoId: string) => {
     setTodos((prevTodos) => {
       return prevTodos.filter((todo) => todo.id !== todoId);
