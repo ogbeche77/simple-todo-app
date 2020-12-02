@@ -1,7 +1,15 @@
 import React from "react";
+import TodoList from "./TodoList";
+//import NewTodo from "./components/NewTodo";
+//import * as ReactDOM from "react-dom";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App: React.FC = () => {
+  const todos = [{ id: "t1", text: "Lets go Shopping" }];
+  return (
+    <div className="App">
+      <TodoList items={todos} />
+    </div>
+  );
+};
 
 export default App;
