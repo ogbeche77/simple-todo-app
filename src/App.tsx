@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TodoList from "./components/TodoList";
 import NewTodo from "./components/NewTodo";
-//import * as ReactDOM from "react-dom";
+import { Route, BrowserRouter, Link } from "react-router-dom";
+import Chat from "./components/Chat";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<{ id: string; text: string }[]>([]);
@@ -23,10 +24,19 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <NewTodo onAddTodo={todoAddHandler} />
-      <TodoList items={todos} onDeleteTodo={todoDeleteHandler} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div>
+          <Link to="/chat">ChatRoom</Link>
+        </div>
+        <Route path="/" exact>
+          <NewTodo onAddTodo={todoAddHandler} />
+          <TodoList items={todos} onDeleteTodo={todoDeleteHandler} />
+        </Route>
+      </div>
+
+      <Route path="/chat" component={Chat}></Route>
+    </BrowserRouter>
   );
 };
 
